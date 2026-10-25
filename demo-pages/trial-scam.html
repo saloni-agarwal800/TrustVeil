@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StreamMax - Start your Rs 1 trial</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 16px/1.5 system-ui, "Segoe UI", sans-serif; background: #0f1020; color: #f2f2f7; }
+    header { padding: 16px 24px; font-weight: 800; letter-spacing: 0.5px; font-size: 22px; color: #ff4d6d; }
+    main { max-width: 520px; margin: 0 auto; padding: 24px 20px 80px; text-align: center; }
+    h1 { font-size: 34px; line-height: 1.15; margin: 8px 0 12px; }
+    .sub { color: #c9c9d9; margin-bottom: 20px; }
+    .timer { display: inline-block; background: #ff4d6d; color: #fff; font-weight: 700; padding: 8px 16px; border-radius: 8px; margin: 8px 0 20px; }
+    #countdown { font-variant-numeric: tabular-nums; }
+    .plan { background: #1c1e3a; border: 1px solid #34376b; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+    .plan .big { font-size: 44px; font-weight: 800; color: #5CFFA6; }
+    .plan p { margin: 6px 0 0; color: #c9c9d9; }
+    .consent { display: flex; gap: 10px; text-align: left; align-items: flex-start; margin: 0 0 20px; }
+    .consent input { margin-top: 4px; }
+    .accept { display: block; width: 100%; padding: 18px; font-size: 20px; font-weight: 800; border: 0; border-radius: 10px; background: #13c26b; color: #fff; cursor: pointer; }
+    .decline { margin-top: 18px; padding: 0; border: 0; background: none; font-size: 9px; color: #3a3d66; cursor: pointer; }
+    .fine { margin-top: 28px; font-size: 9px; color: #4a4d7a; text-align: left; }
+    .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 50; }
+    .modal .box { background: #fff; color: #222; max-width: 360px; border-radius: 12px; padding: 24px; text-align: center; }
+    .modal button { margin-top: 12px; padding: 12px 18px; font-size: 16px; font-weight: 700; border: 0; border-radius: 8px; background: #ff4d6d; color: #fff; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>StreamMax</header>
+  <main>
+    <h1>Watch everything. Start for just Rs 1.</h1>
+    <p class="sub">Movies, cricket and shows in one place.</p>
+
+    <div class="timer">Sirf aaj! Offer expires in <span id="countdown">09:59</span></div>
+
+    <div class="plan">
+      <div class="big">Rs 1</div>
+      <p>for your first 7 days, then Rs 999/month. Last chance, hurry!</p>
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" checked />
+      <span>Yes, subscribe me to the monthly auto-renew membership and send me exclusive offers.</span>
+    </label>
+
+    <button class="accept" type="button">Start Trial</button>
+    <button class="decline" type="button">no thanks</button>
+
+    <p class="fine">
+      By continuing you authorise recurring charges of Rs 999 every month after the trial ends.
+      The plan renews automatically. Cancellation is possible only by writing to support at least 7 days before renewal.
+    </p>
+  </main>
+
+  <script>
+    // Ticking countdown (text-only changes must not retrigger the analysis loop).
+    let left = 9 * 60 + 59;
+    const out = document.getElementById('countdown');
+    setInterval(() => {
+      left = left > 0 ? left - 1 : 0;
+      out.textContent = String(Math.floor(left / 60)).padStart(2, '0') + ':' + String(left % 60).padStart(2, '0');
+    }, 1000);
+
+    // A late exit-intent popup, to show the extension reacting to dynamic content.
+    setTimeout(() => {
+      const modal = document.createElement('div');
+      modal.className = 'modal';
+      modal.innerHTML = '<div class="box"><h2>Wait! Last chance</h2><p>Claim now: your account will be blocked from this offer in 5 minutes.</p><button type="button">Claim now</button></div>';
+      modal.querySelector('button').addEventListener('click', () => modal.remove());
+      document.body.appendChild(modal);
+    }, 6000);
+  </script>
+</body>
+</html>

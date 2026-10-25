@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TrustVeil demo pages</title>
+  <style>
+    body { max-width: 560px; margin: 48px auto; padding: 0 20px; font: 16px/1.6 system-ui, sans-serif; color: #1f2d5c; }
+    li { margin: 10px 0; }
+    code { background: #eef0f8; padding: 1px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>TrustVeil demo pages</h1>
+  <p>These pages are made up for testing the extension. Nothing here is real and nothing is submitted anywhere.</p>
+  <ul>
+    <li><a href="trial-scam.html">Fake free-trial page</a>: pre-ticked box, Rs 1 then Rs 999/month, countdown, tiny "no thanks".</li>
+    <li><a href="fake-bank.html">Fake bank login</a>: claims to be a bank, asks for a password, no HTTPS.</li>
+    <li><a href="safe.html">Normal article</a>: should show no warning.</li>
+  </ul>
+  <p>For the look-alike address demo, add <code>127.0.0.1 sbi-secure-login.com</code> to your hosts file and open
+     <code>http://sbi-secure-login.com:5000/fake-bank.html</code>.</p>
+</body>
+</html>
