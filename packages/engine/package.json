@@ -1,0 +1,12 @@
+{
+  "name": "@trustveil/engine",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": { "@trustveil/shared": "*" },
+  "scripts": {
+    "test": "tsx --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

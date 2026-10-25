@@ -1,0 +1,64 @@
+{
+  "thresholds": { "medium": 25, "high": 60 },
+
+  "checks": {
+    "preticked-consent":     { "weight": 25, "severity": "medium" },
+    "tiny-decline-button":   { "weight": 20, "severity": "medium" },
+    "countdown-timer":       { "weight": 15, "severity": "low" },
+    "urgency-language":      { "weight": 15, "severity": "medium" },
+    "price-trap":            { "weight": 30, "severity": "high" },
+    "hidden-fineprint":      { "weight": 20, "severity": "medium" },
+    "no-https-sensitive":    { "weight": 35, "severity": "high" },
+    "lookalike-domain":      { "weight": 40, "severity": "high" },
+    "brand-mismatch":        { "weight": 35, "severity": "high" },
+    "punycode-domain":       { "weight": 25, "severity": "medium" },
+
+    "deep-recurring-charge": { "weight": 35, "severity": "high" },
+    "deep-step-charge":      { "weight": 30, "severity": "high" },
+    "deep-card-first":       { "weight": 25, "severity": "medium" },
+    "deep-cancel-hidden":    { "weight": 25, "severity": "medium" },
+    "deep-hidden-fees":      { "weight": 25, "severity": "medium" },
+    "deep-inconclusive":     { "weight": 0,  "severity": "low" }
+  },
+
+  "urgency": {
+    "en": [
+      "limited time", "act now", "hurry", "last chance", "offer ends", "expires in",
+      "only today", "don't miss", "few left", "final warning", "claim now",
+      "account will be blocked", "account suspended", "verify immediately",
+      "immediate action", "expires soon", "offer expires"
+    ],
+    "hinglish": [
+      "sirf aaj", "abhi karo", "jaldi karo", "jaldi kijiye", "aakhri mauka",
+      "offer khatam", "khatam hone wala", "turant", "abhi claim", "block ho jayega",
+      "band ho jayega", "last din", "miss mat karo", "kyc update", "kyc expire"
+    ]
+  },
+
+  "subscriptionWords": [
+    "subscribe", "subscription", "auto-renew", "auto renew", "autorenew", "recurring",
+    "membership", "free trial", "monthly", "per month", "/month", "mahine", "renews", "mandate"
+  ],
+  "recurringWords": ["per month", "/month", "/mo", "monthly", "mahina", "mahine", "auto-renew", "auto renew", "renews"],
+  "fineprintWords": ["cancel", "renew", "charged", "auto", "recurring", "refund", "month"],
+  "acceptWords": ["accept", "agree", "continue", "start", "subscribe", "join", "claim", "yes", "activate", "get started", "unlock"],
+  "declineWords": ["no thanks", "no, thanks", "not now", "maybe later", "decline", "skip", "i don't want", "nahi", "no i"],
+
+  "button": { "minDeclineAreaRatio": 0.35, "minContrast": 3, "minFontPx": 11 },
+  "price": { "trialMax": 10, "recurringMin": 100 },
+
+  "brands": [
+    { "name": "SBI", "names": ["state bank of india", "sbi"], "tokens": ["sbi", "statebankofindia"], "officialDomains": ["sbi.co.in", "onlinesbi.sbi", "sbi.bank.in", "sbicard.com"] },
+    { "name": "HDFC Bank", "names": ["hdfc bank", "hdfc"], "tokens": ["hdfc", "hdfcbank"], "officialDomains": ["hdfcbank.com"] },
+    { "name": "ICICI Bank", "names": ["icici bank", "icici"], "tokens": ["icici", "icicibank"], "officialDomains": ["icicibank.com"] },
+    { "name": "Axis Bank", "names": ["axis bank"], "tokens": ["axisbank"], "officialDomains": ["axisbank.com"] },
+    { "name": "Paytm", "names": ["paytm"], "tokens": ["paytm"], "officialDomains": ["paytm.com"] },
+    { "name": "PhonePe", "names": ["phonepe"], "tokens": ["phonepe"], "officialDomains": ["phonepe.com"] },
+    { "name": "Amazon", "names": ["amazon"], "tokens": ["amazon"], "officialDomains": ["amazon.in", "amazon.com", "amazon.co.uk", "amazonaws.com"] },
+    { "name": "Flipkart", "names": ["flipkart"], "tokens": ["flipkart"], "officialDomains": ["flipkart.com"] },
+    { "name": "Netflix", "names": ["netflix"], "tokens": ["netflix"], "officialDomains": ["netflix.com"] },
+    { "name": "Naukri", "names": ["naukri"], "tokens": ["naukri"], "officialDomains": ["naukri.com"] },
+    { "name": "LinkedIn", "names": ["linkedin"], "tokens": ["linkedin"], "officialDomains": ["linkedin.com"] },
+    { "name": "Indeed", "names": ["indeed"], "tokens": ["indeed"], "officialDomains": ["indeed.com"] }
+  ]
+}
