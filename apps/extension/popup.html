@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PhishRadar</title>
+  <style>
+    body { width: 300px; margin: 0; padding: 16px; font: 14px/1.45 system-ui, "Segoe UI", sans-serif; color: #1f2d5c; background: #f6f7fb; }
+    h1 { font-size: 16px; margin: 0 0 12px; }
+    .stats { display: flex; gap: 12px; margin-bottom: 14px; }
+    .stat { flex: 1; background: #fff; border: 1px solid #d9dded; border-radius: 8px; padding: 10px; }
+    .stat b { display: block; font-size: 22px; }
+    label { display: block; margin: 10px 0 4px; font-weight: 600; }
+    select, input[type="text"] { width: 100%; box-sizing: border-box; padding: 6px 8px; border: 1px solid #b9c0dc; border-radius: 6px; font: inherit; }
+    .row { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+    .row label { margin: 0; font-weight: 400; }
+    button { margin-top: 14px; padding: 6px 10px; border: 1px solid #b9c0dc; background: #fff; border-radius: 6px; font: inherit; cursor: pointer; }
+    button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid #2a1b6b; outline-offset: 2px; }
+    small { color: #5b6784; display: block; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h1>PhishRadar</h1>
+  <div class="stats">
+    <div class="stat"><b id="scanned">0</b>pages checked</div>
+    <div class="stat"><b id="warned">0</b>warnings shown</div>
+  </div>
+
+  <label for="lang">Warning language</label>
+  <select id="lang">
+    <option value="en">English</option>
+    <option value="hinglish">Hinglish</option>
+  </select>
+
+  <div class="row">
+    <input type="checkbox" id="showSafe" />
+    <label for="showSafe">Show a short note on safe pages</label>
+  </div>
+
+  <label for="backend">Deep Check server</label>
+  <input type="text" id="backend" />
+  <small>Only used when you press Deep Check on a page.</small>
+
+  <button id="reset">Reset counts</button>
+  <script src="popup.js"></script>
+</body>
+</html>
