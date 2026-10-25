@@ -1,0 +1,14 @@
+{
+  "name": "@trustveil/extension",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@trustveil/engine": "*",
+    "@trustveil/shared": "*"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --watch",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

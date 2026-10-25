@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "PhishRadar (TrustVeil)",
+  "version": "0.1.0",
+  "description": "Warns you about scam and deceptive pages while you browse. Analysis runs on your device.",
+  "permissions": ["storage"],
+  "host_permissions": ["http://localhost:8787/*", "http://127.0.0.1:8787/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_popup": "popup.html", "default_title": "PhishRadar" }
+}
