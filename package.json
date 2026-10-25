@@ -1,0 +1,22 @@
+{
+  "name": "trustveil",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TrustVeil / PhishRadar - two-layer web threat detection (hackathon prototype)",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "build:ext": "npm run build -w @trustveil/extension",
+    "dev:ext": "npm run dev -w @trustveil/extension",
+    "dev:backend": "npm run dev -w @trustveil/backend",
+    "demo": "node demo-pages/serve.mjs",
+    "test": "npm test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.280",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.24.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
